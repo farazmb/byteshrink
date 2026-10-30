@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://byteshrink.pages.dev/sitemap.xml
+Sitemap: https://byteshrink.farazbutt6026.workers.dev/sitemap.xml
