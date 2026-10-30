@@ -1,9 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// Cloudflare Pages project URL is the temporary production origin.
-// Set SITE_URL in the deployment environment when you add a custom domain.
-const site = process.env.SITE_URL || 'https://byteshrink.pages.dev';
+// Current production origin. Update SITE_URL when a custom domain is connected.
+const site = process.env.SITE_URL || 'https://byteshrink.farazbutt6026.workers.dev';
 
 export default defineConfig({
   site,
