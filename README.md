@@ -1,46 +1,44 @@
-# Astro Starter Kit: Basics
+# ByteShrink
+
+ByteShrink is a small collection of browser-based image utilities built with Astro.
+
+## Live routes
+
+- `/` — image compressor for JPG, PNG, and WebP. Supports batches of up to 50 images, target-size presets, quality settings, optional resizing, individual downloads, and ZIP downloads.
+- `/bulk-image-converter/` — batch conversion to JPG, PNG, or WebP, with quality controls, optional resizing, individual downloads, and ZIP downloads.
+- `/about/` — what ByteShrink does and how the tools work.
+- `/privacy/` — file-processing and website privacy information.
+
+The compressor and converter process selected image files in the browser; they do not send those image files to a ByteShrink image-processing server. ZIP downloads load JSZip from a public CDN when requested.
+
+## Local development
+
+Requirements: use the Node.js version specified by the `engines` field in `package.json`.
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The local development server is normally available at `http://localhost:4321`.
 
-## 🚀 Project Structure
+## Production build
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+npm run build
+npm run preview
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Astro writes the production site to `dist/`.
 
-## 🧞 Commands
+## Canonical site URL
 
-All commands are run from the root of the project, from a terminal:
+The Astro `site` value is configured in `astro.config.mjs`. It currently defaults to `https://byteshrink.pages.dev` and can be overridden with the `SITE_URL` environment variable. If the Cloudflare Pages project uses a different hostname, or when a custom domain is connected, update `SITE_URL`, `public/robots.txt`, and `public/sitemap.xml` to the actual canonical hostname before launch.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## SEO launch checks
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Confirm the production hostname and verify canonical URLs on all four routes.
+2. Check that `/robots.txt` and `/sitemap.xml` return successfully and list the canonical URLs.
+3. Run the production build and test the compressor, converter, mobile layout, and ZIP downloads.
+4. Add the production property to Google Search Console and Bing Webmaster Tools, then submit the sitemap.
+5. Update the privacy policy before enabling analytics, advertising, or additional third-party services.
