@@ -21,52 +21,6 @@ const softwareSchema = {
   }
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How do I convert multiple images at once?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Upload multiple images, choose your desired output format, adjust the settings if needed, and select Convert Images. Download files individually or together as a ZIP."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Which image formats can I convert?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "ByteShrink accepts common browser-supported image formats, including JPG, PNG, WebP, GIF, and BMP where supported. You can export images as JPG, PNG, or WebP."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Are my images uploaded to a server?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Image conversion is performed locally in your browser. Your selected images are not uploaded to a ByteShrink server."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Does converting an image reduce its quality?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The result depends on the output format and quality setting. JPG and WebP can use lossy compression, while PNG normally preserves pixel data but may produce larger files."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Can I resize images while converting them?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Enable the resize option and enter a maximum width or height. Images are resized proportionally to fit within the specified dimensions."
-      }
-    }
-  ]
-};
 ---
 
 <!doctype html>
@@ -90,7 +44,6 @@ const faqSchema = {
     <meta name="twitter:description" content={description} />
 
     <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
     <style is:global>
       :root {
