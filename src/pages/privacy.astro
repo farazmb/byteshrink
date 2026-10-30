@@ -70,5 +70,9 @@ const canonical = Astro.site ? new URL("/privacy/", Astro.site).href : undefined
       </section>
     </main>
     <footer>© {new Date().getFullYear()} ByteShrink · <a href="/about/">About</a></footer>
-  </body>
+  
+		<!-- Cloudflare Web Analytics -->
+		<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4052672d7d3b4ef2843205b9b5ae162f"}'></script>
+		<!-- End Cloudflare Web Analytics -->
+	</body>
 </html>
