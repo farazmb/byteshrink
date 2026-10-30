@@ -2,7 +2,7 @@
 const title = "Free Image Compressor – Compress JPG, PNG & WebP to 100KB | ByteShrink";
 
 const description =
-  "Compress JPG, PNG, and WebP images online for free. Bulk compress up to 50 images, target 50 KB, 100 KB or 200 KB, resize, and download as a ZIP. Files stay in your browser.";
+  "Compress JPG, PNG and WebP images online. Batch up to 50 files, target 50 KB, 100 KB or 200 KB, resize, and download as a ZIP. Files stay in your browser.";
 
 const canonical = Astro.site ? new URL("/", Astro.site).href : undefined;
 
@@ -1391,6 +1391,13 @@ const softwareSchema = {
           Need to change image formats instead of reducing file size?
           Try our <a href="/bulk-image-converter/">free bulk image converter</a>
           to convert images between JPG, PNG, and WebP.
+        </p>
+        <p>
+          Need to meet an upload limit? Choose a maximum target of 50 KB,
+          100 KB, 200 KB, 500 KB, or 1 MB before compressing. The target is a
+          maximum goal, not a guarantee for every image. JPG and WebP use
+          quality-based compression; PNG may need resizing or a different
+          output format to reach a smaller file size.
         </p>
       </section>
 
