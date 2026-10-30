@@ -1,0 +1,69 @@
+---
+const title = "About ByteShrink – Free Browser-Based Image Tools";
+const description = "Learn about ByteShrink's free image compressor and bulk image converter. Images are processed locally in your browser.";
+const canonical = Astro.site ? new URL("/about/", Astro.site).href : undefined;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:site_name" content="ByteShrink" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      :root { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #17202b; background: #f7f8fa; }
+      * { box-sizing: border-box; }
+      body { margin: 0; line-height: 1.65; }
+      header, main, footer { width: min(900px, calc(100% - 32px)); margin-inline: auto; }
+      header { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid #e5e7eb; }
+      a { color: #2864e8; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .brand { color: #17202b; font-weight: 800; font-size: 19px; }
+      nav { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+      main { padding: 52px 0 72px; }
+      .eyebrow { color: #2864e8; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+      h1 { margin: 8px 0 12px; font-size: clamp(30px, 5vw, 42px); line-height: 1.15; letter-spacing: -.04em; }
+      h2 { margin: 30px 0 8px; font-size: 20px; }
+      p, li { color: #566170; }
+      .card { margin-top: 24px; padding: 22px; border: 1px solid #e5e7eb; border-radius: 14px; background: white; }
+      footer { padding: 20px 0 30px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 12px; }
+      @media (max-width: 560px) { header { align-items: flex-start; flex-direction: column; padding: 16px 0; } main { padding-top: 36px; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">ByteShrink</a>
+      <nav aria-label="Main navigation">
+        <a href="/">Image Compressor</a>
+        <a href="/bulk-image-converter/">Bulk Converter</a>
+        <a href="/privacy/">Privacy</a>
+      </nav>
+    </header>
+    <main>
+      <div class="eyebrow">About ByteShrink</div>
+      <h1>Simple image tools that work in your browser</h1>
+      <p>ByteShrink is a small collection of free browser-based tools for everyday image tasks. The goal is straightforward: let you compress or convert images without installing desktop software or creating an account.</p>
+      <section class="card">
+        <h2>What you can do</h2>
+        <ul>
+          <li><a href="/">Image compressor</a> — compress JPG, PNG and WebP images, set a target file size, resize when needed, and process batches of up to 50 images.</li>
+          <li><a href="/bulk-image-converter/">Bulk image converter</a> — convert batches of images to JPG, PNG or WebP, adjust quality, resize, and download the results together.</li>
+        </ul>
+        <h2>How image processing works</h2>
+        <p>The compressor and converter process selected image files in your browser. The image-processing code does not upload your selected images to a ByteShrink image-processing server. ZIP downloads use the JSZip library, which is loaded from a public CDN when you request a ZIP file.</p>
+        <h2>Built around practical use</h2>
+        <p>We focus on clear controls, useful output settings, and explaining the limitations of image compression. For example, a target file size is a maximum goal rather than a guarantee that every image can reach that size without substantial resizing or quality loss.</p>
+      </section>
+    </main>
+    <footer>© {new Date().getFullYear()} ByteShrink · <a href="/privacy/">Privacy policy</a></footer>
+  </body>
+</html>

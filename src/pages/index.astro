@@ -1,8 +1,8 @@
 ---
-const title = "Free Image Compressor – Bulk Compress JPG, PNG & WebP | ByteShrink";
+const title = "Free Image Compressor – Compress JPG, PNG & WebP to 100KB | ByteShrink";
 
 const description =
-  "Compress JPG, PNG, and WebP images online for free. Bulk compress images, reduce file sizes, resize pictures, and download optimized images individually or as a ZIP.";
+  "Compress JPG, PNG and WebP images online. Batch up to 50 files, target 50 KB, 100 KB or 200 KB, resize, and download as a ZIP. Files stay in your browser.";
 
 const canonical = Astro.site ? new URL("/", Astro.site).href : undefined;
 
@@ -30,44 +30,6 @@ const softwareSchema = {
   ]
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How do I compress an image to 100 KB?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Select Target file size, choose 100 KB, and compress. The tool aims for the highest-quality output that fits below the target. Resizing may be necessary, and an exact size cannot be guaranteed for every image."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Can I compress JPG, PNG, and WebP images?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "ByteShrink supports JPG, JPEG, PNG, and WebP. You can retain the original format or select a supported output format."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Are my images uploaded anywhere?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Compression runs locally in your browser. The tool does not send your selected images to a ByteShrink server."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Can I compress multiple images at once?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Select multiple images, compress them together, and download individual results or package the outputs into a ZIP file."
-      }
-    }
-  ]
-};
 ---
 
 <!doctype html>
@@ -93,7 +55,6 @@ const faqSchema = {
     <meta name="twitter:description" content={description} />
 
     <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)}></script>
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 
     <style is:global>
       :root {
@@ -1200,9 +1161,9 @@ const faqSchema = {
         <h1>Free Online Image Compressor</h1>
         <p>
           Compress JPG, PNG, and WebP images individually or in bulk.
-          Reduce image file sizes with target-size presets, custom quality
-          settings, and optional resizing. Download optimized images
-          separately or together as a ZIP file.
+          Reduce image file sizes with 50 KB, 100 KB, 200 KB and custom
+          target-size settings. Compress up to 50 images, adjust quality,
+          resize when needed, and download individually or as a ZIP.
         </p>
       </section>
 
@@ -1431,6 +1392,13 @@ const faqSchema = {
           Try our <a href="/bulk-image-converter/">free bulk image converter</a>
           to convert images between JPG, PNG, and WebP.
         </p>
+        <p>
+          Need to meet an upload limit? Choose a maximum target of 50 KB,
+          100 KB, 200 KB, 500 KB, or 1 MB before compressing. The target is a
+          maximum goal, not a guarantee for every image. JPG and WebP use
+          quality-based compression; PNG may need resizing or a different
+          output format to reach a smaller file size.
+        </p>
       </section>
 
       <section class="faq">
@@ -1474,6 +1442,11 @@ const faqSchema = {
       <footer>
         <span>© {new Date().getFullYear()} ByteShrink</span>
         <span>Free image compression, right in your browser.</span>
+        <nav aria-label="Footer navigation">
+          <a href="/bulk-image-converter/">Bulk Converter</a>
+          <a href="/about/">About</a>
+          <a href="/privacy/">Privacy</a>
+        </nav>
       </footer>
     </main>
 
