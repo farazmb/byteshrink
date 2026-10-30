@@ -1,0 +1,74 @@
+---
+const title = "Privacy Policy – ByteShrink";
+const description = "Read how ByteShrink handles image files, browser processing, ZIP downloads, and basic website requests.";
+const canonical = Astro.site ? new URL("/privacy/", Astro.site).href : undefined;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:site_name" content="ByteShrink" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      :root { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #17202b; background: #f7f8fa; }
+      * { box-sizing: border-box; }
+      body { margin: 0; line-height: 1.65; }
+      header, main, footer { width: min(900px, calc(100% - 32px)); margin-inline: auto; }
+      header { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid #e5e7eb; }
+      a { color: #2864e8; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .brand { color: #17202b; font-weight: 800; font-size: 19px; }
+      nav { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+      main { padding: 52px 0 72px; }
+      .eyebrow { color: #2864e8; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+      h1 { margin: 8px 0 12px; font-size: clamp(30px, 5vw, 42px); line-height: 1.15; letter-spacing: -.04em; }
+      h2 { margin: 30px 0 8px; font-size: 20px; }
+      p, li { color: #566170; }
+      .card { margin-top: 24px; padding: 22px; border: 1px solid #e5e7eb; border-radius: 14px; background: white; }
+      footer { padding: 20px 0 30px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 12px; }
+      @media (max-width: 560px) { header { align-items: flex-start; flex-direction: column; padding: 16px 0; } main { padding-top: 36px; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">ByteShrink</a>
+      <nav aria-label="Main navigation">
+        <a href="/">Image Compressor</a>
+        <a href="/bulk-image-converter/">Bulk Converter</a>
+        <a href="/about/">About</a>
+      </nav>
+    </header>
+    <main>
+      <div class="eyebrow">Privacy</div>
+      <h1>Privacy Policy</h1>
+      <p>This policy explains how ByteShrink's current image tools handle files and what happens when you use this website.</p>
+      <section class="card">
+        <h2>Image files you select</h2>
+        <p>The image compressor and bulk image converter perform image decoding, compression, resizing, and conversion locally in your browser. The selected image files are not sent to a ByteShrink image-processing server by these tools. Your files remain under your control on your device.</p>
+        <h2>ZIP downloads and third-party code</h2>
+        <p>When you request a ZIP download, the relevant tool loads the JSZip library from a public content delivery network (jsDelivr on the compressor page and cdnjs on the converter page). This causes your browser to request that library from the CDN. The CDN may receive standard request information such as your IP address, browser details, and the requested resource. The ZIP itself is created in your browser from the processed files.</p>
+        <h2>Website requests and hosting</h2>
+        <p>Like most websites, the hosting provider may process basic technical information needed to deliver pages, protect the service, and troubleshoot errors. This can include request time, IP address, browser or device information, and requested page. The exact retention and handling depend on the hosting provider and its configuration.</p>
+        <h2>Cookies, analytics, and advertising</h2>
+        <p>The current application source does not include an account system or an image-upload service. If analytics, advertising, embedded third-party services, or additional cookies are introduced, this policy must be updated to describe those services and their data practices before they are enabled.</p>
+        <h2>Children and sensitive files</h2>
+        <p>ByteShrink is a general-purpose image utility, not a file-storage service. Do not use a shared or public device for sensitive files, and close the page when you have finished. Browser extensions and the device itself may have access to files or page activity outside ByteShrink's control.</p>
+        <h2>Changes to this policy</h2>
+        <p>This policy may be updated when the website's features, hosting, analytics, or advertising arrangements change. Please review it again after significant changes.</p>
+        <h2>Contact</h2>
+        <p>For questions about this policy or the tools, use the project repository's issue tracker: <a href="https://github.com/farazmb/byteshrink/issues">ByteShrink on GitHub</a>.</p>
+      </section>
+    </main>
+    <footer>© {new Date().getFullYear()} ByteShrink · <a href="/about/">About</a></footer>
+  </body>
+</html>
