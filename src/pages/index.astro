@@ -30,44 +30,6 @@ const softwareSchema = {
   ]
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How do I compress an image to 100 KB?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Select Target file size, choose 100 KB, and compress. The tool aims for the highest-quality output that fits below the target. Resizing may be necessary, and an exact size cannot be guaranteed for every image."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Can I compress JPG, PNG, and WebP images?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "ByteShrink supports JPG, JPEG, PNG, and WebP. You can retain the original format or select a supported output format."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Are my images uploaded anywhere?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Compression runs locally in your browser. The tool does not send your selected images to a ByteShrink server."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Can I compress multiple images at once?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Select multiple images, compress them together, and download individual results or package the outputs into a ZIP file."
-      }
-    }
-  ]
-};
 ---
 
 <!doctype html>
@@ -93,7 +55,6 @@ const faqSchema = {
     <meta name="twitter:description" content={description} />
 
     <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)}></script>
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 
     <style is:global>
       :root {
